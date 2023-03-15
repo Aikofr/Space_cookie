@@ -29,6 +29,7 @@
 
 
     <section class="main-container">
+<!-- body-->
         <div class="score">
             <h2>COOKIES</h2>
             <p><span class="cookies">1000</span></p>
@@ -40,47 +41,23 @@
     </section>
 
 
-    <footer>
-
-        <!-- (remplacer par les icones plus tard) - icone qui affiche le contenues si click -->
-        <!-- <div class="menu-container">
-            <div class="onglets-container">
-                <div class="onglets" data-anim="1">Succès</div>
-                <div class="onglets active" data-anim="2">Stats</div>
-                <div class="onglets" data-anim="3">Shop</div>
-            </div> -->
-
-        <!-- Contenu onglet Succès -->
-        <!-- <div class="contenu" data-anim="1"> 
-                <p>succès01</p>
-                <p>succès02</p>
-                <p>succès03</p>
-                <p>succès04</p>
-            </div> -->
-
-        <!-- Contenu onglet Statistique -->
-        <!-- <div class="contenu activeContenu" data-anim="2">
-                <p>10 per seconde</p>
-                <p>10 per clicks</p>
-            </div> -->
-
-        <!-- Contenu onglet boutique -->
-        <!-- <div class="contenu activeContenu" data-anim="3">
-                <button>Passif</button>
-                <button>Actif</button>
-            </div>
-        </div> -->
-
-        <div class="tabs">
+ 
+   <footer>
+        <div 
+        role="tablist"
+        aria-label="tabs component"
+        class="tabs">
             <div class="tabs-btn-container">
-                <button class="tab">
-                    Succès
+                <button class="tab" onclick="tabsAnimation(0)">
+                    <img src="assets/star.png" alt="Icone Succès">
                 </button>
-                <button class="tab active-tab">
-                    Statistique
+
+                <button class="tab active-tab" onclick="tabsAnimation(1)">
+                    <img src="assets/cookie_vanilla.png" alt="Icone statistique">
                 </button>
-                <button class="tab">
-                    Shops
+
+                <button class="tab" id="tabShop" onclick="tabsAnimation(2)">
+                    <img src="assets/cookie-shop.png" alt="Icone Shops">
                 </button>
             </div>
 
@@ -92,8 +69,8 @@
             </div>
 
             <div class="tab-content active-tab-content">
-                <p>10 per seconds</p>
-                <p>10 per click</p>
+                <p><span class="perClicks">0 </span>per clicks</p>
+                <p><span class="perSeconds">0 </span>per seconds</p>
             </div>
 
             <div class="tab-content">
