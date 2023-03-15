@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/cookie.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
     <title>Space Cookie</title>
 </head>
+
 <body>
     <header class="header">
         <h1>Cookie Clicker</h1>
@@ -22,15 +29,19 @@
 
 
     <section class="main-container">
-        <h2>COOKIES : </h2>
-        <p><span class="cookies">0</span></p>
+        <div class="score">
+            <h2>COOKIES</h2>
+            <p><span class="cookies">1000</span></p>
+        </div>
         <!-- ESSAYER SANS SPAN -->
-        <img src="assets/cookie.png" alt="Un cookie heureux">
+        <img src="assets/cookie.png" alt="Un cookie heureux" class="main-cookie">
+        <!--- <img src="assets/main-cookie-chocolat.png" alt="Un cookie heureux" class="main-cookie chocolat">
+        <img src="assets/main-cookie-gold.png" alt="Un cookie heureux" class="main-cookie gold"> -->
     </section>
 
 
-   <footer>
-    
+    <footer>
+
         <!-- (remplacer par les icones plus tard) - icone qui affiche le contenues si click -->
         <!-- <div class="menu-container">
             <div class="onglets-container">
@@ -39,22 +50,22 @@
                 <div class="onglets" data-anim="3">Shop</div>
             </div> -->
 
-            <!-- Contenu onglet Succès -->
-            <!-- <div class="contenu" data-anim="1"> 
+        <!-- Contenu onglet Succès -->
+        <!-- <div class="contenu" data-anim="1"> 
                 <p>succès01</p>
                 <p>succès02</p>
                 <p>succès03</p>
                 <p>succès04</p>
             </div> -->
 
-            <!-- Contenu onglet Statistique -->
-            <!-- <div class="contenu activeContenu" data-anim="2">
+        <!-- Contenu onglet Statistique -->
+        <!-- <div class="contenu activeContenu" data-anim="2">
                 <p>10 per seconde</p>
                 <p>10 per clicks</p>
             </div> -->
 
-            <!-- Contenu onglet boutique -->
-            <!-- <div class="contenu activeContenu" data-anim="3">
+        <!-- Contenu onglet boutique -->
+        <!-- <div class="contenu activeContenu" data-anim="3">
                 <button>Passif</button>
                 <button>Actif</button>
             </div>
@@ -91,8 +102,9 @@
             </div>
         </div>
 
-   </footer>
-    
+    </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>

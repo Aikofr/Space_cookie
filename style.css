@@ -1,13 +1,33 @@
-*, ::before, ::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+
+/* functions primaries color and font*/
+:root {
+
+  --main-color-yellow: #D2A01E;
+  --main-color-brown: #6B5A1E;
+  --main-color-gris-1: #f9f9f9;
+  --main-color-gris-2: #f0f0f0;
+  --main-color-gris-3: #e6e6e6;
+  --main-color-gris-4: #CAC8C8;
+  --dark-color-yellow: #BF8211;
+  --dark-color-gris-1: #8C8C8C;
+  --dark-color-gris-2: #616161;
+  --dark-color-gris-3: #545151;
+  --dark-color-gris-4: #4E4B4B;
+  --main-font: 'Angkor', serif;
+}
+
 .header {
   background-color: #F9F9F9;
   height: 80px;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -18,20 +38,20 @@ body {
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--main-font);
   font-size: 30px;
-  font-weight: 700;
-  color: #D2A01E;
+  font-weight: 500;
+  color: var(--main-color-yellow);
   display: flex;
   justify-content: center;
   padding: 20px;
-  
+
 }
 
 .checkbox {
   display: none;
   align-items: right;
-  justify-content: right;  
+  justify-content: right;
 }
 
 .switch {
@@ -63,22 +83,55 @@ h1 {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #D2A01E;
+  background-color: var(--main-color-yellow);
   transform: translateX(-40px);
   border-radius: 20px;
   transition: .3s;
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.checkbox:checked ~ .dark-mode::before {
+/* body score*/
+.score {
+  display: block;
+  margin-top: 100px;
+  text-align: center;
+  color: var(--main-color-brown);
+
+}
+
+.score p {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.2;
+
+}
+
+.score h2 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+
+}
+
+.main-cookie {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+
+.checkbox:checked~.dark-mode::before {
   transform: translateX(40px);
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.checkbox:checked ~ .dark-mode {
+.checkbox:checked~.dark-mode {
   background-color: white;
 }
 
-.checkbox:active ~ .dark-mode::before {
+.checkbox:active~.dark-mode::before {
   transform: translate(0);
 }
