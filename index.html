@@ -1,87 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/cookie.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/cookie.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Angkor&display=swap"
+      rel="stylesheet"
+    />
     <title>Space Cookie</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <h1>Cookie Clicker</h1>
-        <label class="switch">
-            <input type="checkbox" class="checkbox">
-            <div class="dark-mode"></div>
-            <p>
-                dark mode
-            </p>
-        </label>
+      <h1>Cookie Clicker</h1>
+      <label class="switch">
+        <input type="checkbox" class="checkbox" />
+        <div class="dark-mode"></div>
+        <p>dark mode</p>
+      </label>
     </header>
 
-
     <section class="main-container">
-<!-- body-->
-        <div class="score">
-            <h2>COOKIES</h2>
-            <p><span class="cookies">1000</span></p>
-        </div>
-        <!-- ESSAYER SANS SPAN -->
-        <img src="assets/cookie.png" alt="Un cookie heureux" class="main-cookie">
-        <!--- <img src="assets/main-cookie-chocolat.png" alt="Un cookie heureux" class="main-cookie chocolat">
+      <!-- body-->
+      <div class="score">
+        <h2>COOKIES</h2>
+        <p><span class="cookies">1000</span></p>
+      </div>
+      <!-- ESSAYER SANS SPAN -->
+      <img
+        src="assets/cookie.png"
+        alt="Un cookie heureux"
+        class="main-cookie"
+      />
+      <!--- <img src="assets/main-cookie-chocolat.png" alt="Un cookie heureux" class="main-cookie chocolat">
         <img src="assets/main-cookie-gold.png" alt="Un cookie heureux" class="main-cookie gold"> -->
     </section>
 
+    <footer>
+      <div role="tablist" aria-label="tabs component" class="tabs">
+        <div class="tabs-btn-container">
+          <button class="tab" onclick="tabsAnimation(0)">
+            <img src="assets/star.png" alt="Icone Succès" />
+          </button>
 
- 
-   <footer>
-        <div 
-        role="tablist"
-        aria-label="tabs component"
-        class="tabs">
-            <div class="tabs-btn-container">
-                <button class="tab" onclick="tabsAnimation(0)">
-                    <img src="assets/star.png" alt="Icone Succès">
-                </button>
+          <button class="tab active-tab" onclick="tabsAnimation(1)">
+            <img src="assets/cookie_vanilla.png" alt="Icone statistique" />
+          </button>
 
-                <button class="tab active-tab" onclick="tabsAnimation(1)">
-                    <img src="assets/cookie_vanilla.png" alt="Icone statistique">
-                </button>
-
-                <button class="tab" id="tabShop" onclick="tabsAnimation(2)">
-                    <img src="assets/cookie-shop.png" alt="Icone Shops">
-                </button>
-            </div>
-
-            <div class="tab-content">
-                <p>Succès01</p>
-                <p>Succès02</p>
-                <p>Succès03</p>
-                <p>Succès04</p>
-            </div>
-
-            <div class="tab-content active-tab-content">
-                <p><span class="perClicks">0 </span>per clicks</p>
-                <p><span class="perSeconds">0 </span>per seconds</p>
-            </div>
-
-            <div class="tab-content">
-                <button>Passif</button>
-                <button>Actif</button>
-            </div>
+          <button class="tab" id="tabShop" onclick="tabsAnimation(2)">
+            <img src="assets/cookie-shop.png" alt="Icone Shops" />
+          </button>
         </div>
 
+        <div class="tab-content">
+
+          <div class="logograndma box-image">
+            <img
+              class="grandmasucces"
+              src="assets/succes/succ_grandma.png"
+              alt="cookie succes"
+            />
+          </div>
+
+          <div class="cookiesucces box-image">
+            <img
+              class="cookiesucces"
+              src="assets/succes/succ_cookie.png"
+              alt="cookie succes"
+            />
+          </div>
+
+          <div class="musclesucces box-image">
+            <img
+              class="musclesucces"
+              src="assets/succes/succ_muscle.png"
+              alt="muscle succes"
+            />
+          </div>
+
+          <div class="ovensucces box-image">
+            <img
+              class="ovensucces"
+              src="assets/succes/succ_four.png"
+              alt="oven succes"
+            />
+          </p>
+          </div>
+
+        </div>
+
+        <div class="tab-content active-tab-content">
+          <p><span class="perClicks">0 </span>per clicks</p>
+          <p><span class="perSeconds">0 </span>per seconds</p>
+        </div>
+
+        <div class="tab-content">
+          <button>passif</button>
+          <button>Actif</button>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
