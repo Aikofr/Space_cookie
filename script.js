@@ -52,3 +52,11 @@ if (typeof(Storage) !== "undefined") {
   
       // Plus opti de passer par un EventListener ? 
     // document.getElementById("button").addEventListener("click", onClick);
+
+
+
+const modeSombreToggle = document.querySelector('.checkbox');
+
+modeSombreToggle.addEventListener('click', () => {
+    document.body.classList.toggle('body-sombre');
+});
