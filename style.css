@@ -15,8 +15,8 @@
   --main-color-middle-gray: #e6e6e6;
   --main-color-dark-gray: #cac8c8;
   --main-body-color: white;
-  /* --dark-color-yellow: #bf8211; */
   --dark-color-light-gray: #8c8c8c;
+    /* --dark-color-yellow: #bf8211; */
   /* --dark-color-middle-light-gray: #616161;
   --dark-color-middle-gray: #545151;
   --dark-color-dark-gray: #4e4b4b; */
@@ -348,13 +348,13 @@ h1 {
 }
 
 /* FOOTER */
-footer {}
+
 
 .tabs {
-  width: 100%;
   /* border: 1px solid #ffffff3e; */
   display: grid;
   grid-template-rows: min-content 1fr;
+  width: 100%;
 }
 
 .tabs-btn-container {
@@ -369,7 +369,6 @@ footer {}
   width: clamp(100px, 6.8rem, 150px);
   margin: auto;
   padding: 0.9rem;
-
 }
 
 .box-image {
@@ -420,8 +419,9 @@ footer {}
   visibility: hidden;
   transition: opacity 0.4s ease-out;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 2rem;
+  overflow: auto;
 }
 
 .tab-content:nth-child(2) {
