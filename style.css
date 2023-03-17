@@ -31,6 +31,211 @@
   right: 0;
 }
 
+/* animation bg body*/
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+  width: 100%;
+  position: absolute;
+  top: 50vh;
+
+}
+
+.context h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+}
+
+
+.area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  animation: animate 15s linear infinite;
+  bottom: -150px;
+
+}
+
+.circles li:nth-child(1) {
+  left: 22%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2) {
+  left: 5%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 2s;
+  animation-duration: 6s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 2s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 130px;
+  height: 130px;
+  animation-delay: 4s;
+  animation-duration: 8s;
+}
+
+.circles li:nth-child(7) {
+  left: 30%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(8) {
+  left: 80%;
+  width: 75px;
+  height: 75px;
+  animation-delay: 1s;
+  animation-duration: 7s;
+}
+
+.circles li:nth-child(9) {
+  left: 25%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 2s;
+  animation-duration: 6s;
+}
+
+.circles li:nth-child(10) {
+  left: 80%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
+
+.circles li:nth-child(11) {
+  left: 55%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 2s;
+  animation-duration: 6s;
+}
+
+.circles li:nth-child(12) {
+  left: 48%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 2s;
+  animation-duration: 7s;
+}
+
+.circles li:nth-child(13) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 5s;
+}
+
+.circles li:nth-child(14) {
+  left: 70%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 3s;
+  animation-duration: 7s;
+}
+
+.circles li:nth-child(15) {
+  left: 20%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 2s;
+  animation-duration: 5s;
+}
+
+.circles li:nth-child(16) {
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 4s;
+  animation-duration: 8s;
+}
+
+.circles li:nth-child(17) {
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+@keyframes animate {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+}
+
+/* body*/
 body {
   height: 100vh;
 }
@@ -114,26 +319,28 @@ h1 {
   font-size: 1rem;
 }
 
+/* body - cookie*/
 .main-cookie {
   display: flex;
   width: 80%;
   margin: auto;
 }
 
-.checkbox:checked ~ .dark-mode::before {
+.checkbox:checked~.dark-mode::before {
   transform: translateX(40px);
   box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
 }
 
-.checkbox:checked ~ .dark-mode {
+.checkbox:checked~.dark-mode {
   background-color: white;
 }
 
-.checkbox:active ~ .dark-mode::before {
+.checkbox:active~.dark-mode::before {
   transform: translate(0);
 }
 
 /* FOOTER */
+footer {}
 
 .tabs {
   width: 100%;
@@ -154,6 +361,7 @@ h1 {
   width: clamp(100px, 6.8rem, 150px);
   margin: auto;
   padding: 0.9rem;
+
 }
 
 .box-image {
@@ -162,13 +370,17 @@ h1 {
   border-radius: 5rem;
   background-color: var(--dark-color-light-gray);
   margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tab {
   border: none;
   background: transparent;
   cursor: pointer;
-  flex-basis: 100%; /* width 100% sur chaque enfant, il se partage donc l'espace */
+  flex-basis: 100%;
+  /* width 100% sur chaque enfant, il se partage donc l'espace */
 
   display: flex;
   justify-content: center;
@@ -221,4 +433,68 @@ button {
 .active-tab-content {
   visibility: visible;
   opacity: 1;
+}
+
+/* Tab - cookie click*/
+.click_seconde img {
+  width: 20%;
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+
+.click_seconde {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--main-color-yellow);
+}
+
+.score-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+
+}
+
+/* Tab - actif - passif*/
+.tab_score img {
+  width: 20%;
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+
+.tab_score {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.0;
+  color: var(--main-color-yellow);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.tab_score_content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+
+}
+
+.tab_score_content button {
+  background-color: var(--main-color-dark-gray);
+  border-radius: 20px;
+  border: none;
+  margin: 0.8rem;
+}
+
+.score-seconde {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.0;
+  color: var(--main-color-yellow);
 }
