@@ -10,7 +10,6 @@ const tabContents = document.querySelectorAll(".tab-content")
     let perClicksPrice = localStorage.getItem("perclicksprice");
 
 
-
 // STOCKAGE DES DONNEES :
 // Vérifie si le navigateur prend en charge le stockage local
 if (typeof(Storage) !== "undefined") {
@@ -52,7 +51,7 @@ if (typeof(Storage) !== "undefined") {
 // Fonction appelée lorsque le joueur clique sur le bouton
 function onClick() {
   // Récupère le nombre de clics actuel + boost
-  let clicks = parseInt(document.getElementById("clicks").innerHTML);
+  let clicks = parseInt(document.getElementById("clicks").textContent);
   let perClicks = parseInt(document.getElementById("perClicks").textContent);
   
   // Incrémente le nombre de clics
@@ -72,7 +71,7 @@ function cpcUp(){
     perClicks++;
     document.getElementById("perClicks").textContent = perClicks;
     clicks -= perClicksPrice;
-    perClicksPrice = perClicksPrice * 1.6;
+    perClicksPrice = Math.round(perClicksPrice * 1.2);
     document.getElementById("clicks").textContent = clicks;
     document.getElementById("perClicksPrice").textContent = perClicksPrice;
     localStorage.setItem("clicks", clicks);
