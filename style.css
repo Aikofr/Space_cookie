@@ -16,7 +16,7 @@
   --main-color-dark-gray: #cac8c8;
   --main-body-color: white;
   --dark-color-light-gray: #8c8c8c;
-    /* --dark-color-yellow: #bf8211; */
+  /* --dark-color-yellow: #bf8211; */
   /* --dark-color-middle-light-gray: #616161;
   --dark-color-middle-gray: #545151;
   --dark-color-dark-gray: #4e4b4b; */
@@ -62,18 +62,27 @@ body:before {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     visibility: hidden;
   }
 }
 
-body.body-sombre{
+.main-cookie:hover {
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari 3-8 */
+  transform: scale(1.2);
+}
+
+body.body-sombre {
   --main-color-light-gray: #4E4B4B;
   --main-body-color: #616161;
   --main-color-brown: #BF8211;
   --main-color-middle-light-gray: #545151;
-  --main-color-middle-gray: #4E4B4B; 
+  --main-color-middle-gray: #4E4B4B;
   --main-color-dark-gray: #5F5A5A;
 }
 
@@ -248,7 +257,7 @@ body.body-sombre{
 
   100% {
     transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
+    opacity: 0.7;
     border-radius: 50%;
   }
 
@@ -338,7 +347,10 @@ h1 {
 .main-cookie {
   display: flex;
   width: 70%;
+  height: 70%;
   margin: auto;
+  max-width: 520px;
+  max-height: 520px;
   margin-top: 60px;
   transition: transform .1s;
 
@@ -364,7 +376,7 @@ h1 {
 
 /* FOOTER */
 
-footer{
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -409,7 +421,8 @@ footer{
   border: none;
   background: transparent;
   cursor: pointer;
-  flex-basis: 100%; /* width 100% sur chaque enfant, il se partage donc l'espace */
+  flex-basis: 100%;
+  /* width 100% sur chaque enfant, il se partage donc l'espace */
 
   display: flex;
   justify-content: center;
@@ -502,7 +515,7 @@ button {
   font-family: var(--main-font);
   font-style: normal;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   line-height: 1.0;
   color: var(--main-color-yellow);
   margin-left: 1rem;
@@ -516,7 +529,7 @@ button {
 }
 
 .tab_score_content button {
-  background-color: var(--main-color-dark-gray);
+  /*background-color: var(--main-color-light-gray);*/
   border-radius: 20px;
   border: none;
   margin: 0.8rem;
