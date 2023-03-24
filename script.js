@@ -3,12 +3,26 @@ const tabs = document.querySelectorAll('.tab')
 // Je stock tout mon content
 const tabContents = document.querySelectorAll(".tab-content")
 
+const cookieSucc = document.getElementById('cookiesucces')
+const grandmaSucc = document.getElementById('logograndma')
+const succMuscl = document.getElementById('musclesucces')
+const succFour = document.getElementById('ovensucces')
+
+
 // Récupère le nombre de clics sauvegardé localement (s'il existe)
 let clicks = localStorage.getItem("clicks");
 
 // Récupère les stats par click (s'il existe)
 let perClicks = localStorage.getItem("perclicks");
 let perClicksPrice = localStorage.getItem("perclicksprice");
+let goldCook = localStorage.getItem("goldcook");
+let grandMa = localStorage.getItem("grandma");
+
+//Pour les stats a la seconde
+let clickCount = 0;
+let timeElapsed = 0;
+let clickRate = 0;
+const imgCookie = document.getElementById('main-cookie');
 
 // Récupère les stats par click (s'il existe)
 let perSeconds = localStorage.getItem("perseconds");
@@ -36,7 +50,7 @@ if (typeof(Storage) !== "undefined") {
     } else {
       // Initialise le nombre de perclicks à 1 s'il n'existe pas encore
       localStorage.setItem("perclicks", 1);
-      console.log("perClicks pas trouvé, dépars a 1 !")
+      console.log("perClicks pas trouvé, Départ a 1 !")
     }
 
     //Initialise la donnée perClicksPrice
@@ -47,7 +61,7 @@ if (typeof(Storage) !== "undefined") {
     } else {
       // Initialise le nombre de perclicksprice à 25 s'il n'existe pas encore
       localStorage.setItem("perclicksprice", 25);
-      console.log("perClicksPrice pas trouvé, dépars a 25 !")
+      console.log("perClicksPrice pas trouvé, Départ a 25 !")
     }
 
     //Initialise la donnée perSeconds
@@ -58,7 +72,7 @@ if (typeof(Storage) !== "undefined") {
     } else {
       // Initialise le nombre de perSeconds à 0 s'il n'existe pas encore
       localStorage.setItem("perseconds", 0);
-      console.log("perSeconds pas trouvé, dépars a 0 !")
+      console.log("perSeconds pas trouvé, Départ a 0 !")
     }
 
     //Initialise la donnée perSeconds
@@ -69,19 +83,37 @@ if (typeof(Storage) !== "undefined") {
     } else {
       // Initialise le nombre de perSecondsPrice à 30 s'il n'existe pas encore
       localStorage.setItem("persecondsprice", 30);
-      console.log("perSecondsPrice pas trouvé, dépars a 30 !")
+      console.log("perSecondsPrice pas trouvé, Départ a 30 !")
     }
 
-    // if (perSeconds >= 1){
-    //   launchAutomatiqueCookie(true)
-    // }
+    //Initialise la donnée goldCook
+    if (goldCook !== null){
+      console.log("goldCook trouvé !")
+    } else {
+      // Initialise le nombre de goldCook à 0 s'il n'existe pas encore
+      localStorage.setItem("goldcook", 0)
+      console.log("goldcook pas trouvé, Départ a 0")
+    }
+    if (goldCook == 1){
+      goldSucces()
+    }
+
+      //Initialise la donnée goldCook
+      if (grandMa !== null){
+        console.log("grandMa trouvé !")
+      } else {
+        // Initialise le nombre de goldCook à 0 s'il n'existe pas encore
+        localStorage.setItem("grandma", 0)
+        console.log("grandMa pas trouvé, Départ a 0")
+      }
+      if (perSeconds >= 15){
+        grandmaSucces()
+      }
 
 } else {
   // Le navigateur ne prend pas en charge le stockage local
   document.getElementById("clicks").textContent = "Désolé, votre navigateur ne prend pas en charge le stockage local.";
 }
-
-
 
 // Fonction appelée lorsque le joueur clique sur le bouton
 function onClick() {
@@ -98,8 +130,6 @@ function onClick() {
 }
 
 function launchAutomatiqueCookie(){
-  // console.log(giveCook)
-
   if (giveCook === false){
     setInterval(function(){
       let perSeconds = localStorage.getItem("perseconds");
@@ -112,18 +142,6 @@ function launchAutomatiqueCookie(){
     giveCook = true
   }
 }
-
-
-// ICI CA MARCHE MAIS CEST DE LA MERDE
-// setInterval(function() {
-//   let clicks = parseInt(document.getElementById("clicks").textContent);
-//   let perSeconds = parseInt(document.getElementById("perSeconds").textContent);
-//   clicks += perSeconds;
-//   document.getElementById("clicks").textContent = clicks;
-//   localStorage.setItem("clicks", clicks);
-//   console.log("JE NE SUIS PAS OPTI DU TOUT")
-// }, 1500);
-  
 
 function cpcUp(){
   let clicks = parseInt(document.getElementById("clicks").textContent);
@@ -162,7 +180,6 @@ function cpcUp(){
   }
 }
 
-
 function secUp(){
   let clicks = parseInt(document.getElementById("clicks").textContent);
 
@@ -181,11 +198,84 @@ function secUp(){
   localStorage.setItem("persecondsprice", perSecondsPrice)
   localStorage.setItem("perseconds", perSeconds);
   launchAutomatiqueCookie()
+
+  if(perSeconds >= 15){
+    grandmaSucces()
+  }
 } else {
     alert("Not Enough Cookies!");
   }
 }
 
+
+
+setInterval(function() {
+  timeElapsed += 1;
+  if (timeElapsed === 10) {
+    clickRate = clickCount / 10;
+    sessionStorage.setItem('clickRate', clickRate);
+    clickCount = 0;
+    timeElapsed = 0;
+
+    console.log(clickRate)
+    if (clickRate > 1 && clickRate < 3){
+      console.log("JE SUIS PLUTOT BON")
+      imgCookie.src = "assets/main-cookie-chocolat.png"
+    } else if (clickRate >= 3){
+      console.log("JE SUIS SUPER BON")
+      imgCookie.src = "assets/main-cookie-gold.png"
+      localStorage.setItem("goldcook", 1)
+      goldSucces()
+    } else if (clickRate < 1){
+      console.log("JE JOUE PAS")
+      imgCookie.src = "assets/cookie.png"
+    }
+  }
+}, 1000);
+
+document.getElementById('main-cookie').addEventListener('click', function() {
+  clickCount += 1;
+});
+
+
+
+
+
+
+//Ici j'affiche une alerte au click des succès pour afficher une petite description (Jolie fenêtre plus tard)
+grandmaSucc.addEventListener('click', function() {
+  alert("Grand-mère te cuisine 15 cookies par seconde ! Woah !");
+})
+cookieSucc.addEventListener('click', function() {
+  alert("Ceci est un succès secret !");
+})
+succMuscl.addEventListener('click', function() {
+  alert("tu cuisines 10 cookies par fournée !");
+})
+succFour.addEventListener('click', function() {
+  alert("Tu cuisines 40 cookie par fournée ! quel talent !");
+})
+
+//On récup les valeurs, puis on vérifie si le succès a déjà été atteint alors on affiche
+function goldSucces(){
+  let goldCook = localStorage.getItem("goldcook")
+
+  if (goldCook == 1){
+    console.log("J'ai le succes goldcook")
+    cookieSucc.style.backgroundColor = '#BF8211';
+  }
+}
+
+//On récup les valeurs, puis on vérifie si l'amélioration est sup ou égal a 15, si oui on affiche le succes
+function grandmaSucces(){
+  let grandMa = localStorage.getItem("grandma");
+  let perSeconds = localStorage.getItem("perseconds");
+
+  if (perSeconds >= 15){
+    console.log("J'ai le succes grandma")
+    grandmaSucc.style.backgroundColor = '#BF8211';
+  }
+}
 
 function tabsAnimation(num){
   //On retirer la class de la tab a retirer (tab + content)
@@ -199,8 +289,10 @@ function tabsAnimation(num){
   tabContents[num].classList.add("active-tab-content")
 }
   
-
 const modeSombreToggle = document.querySelector('.checkbox');
 modeSombreToggle.addEventListener('click', () => {
     document.body.classList.toggle('body-sombre');
 });
+
+
+console.log("ALORS ON ESSAYE DE TRICHER PETIT COCHON ?")

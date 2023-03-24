@@ -107,7 +107,7 @@
   </div>
 
   <header class="header">
-    <h1>Cookie Clicker</h1>
+    <h1>Space Cookie</h1>
     <label class="switch">
       <input type="checkbox" class="checkbox" />
       <div class="dark-mode"></div>
@@ -125,9 +125,8 @@
     </div>
     <div class="picturecontent">
       <img src="assets/perso1.png" alt="Un personnage heureux" class="mobile_hidden perso1">
-      <img src="assets/cookie.png" alt="Un cookie heureux" class="main-cookie" onclick="onClick()">
+      <img src="assets/cookie.png" alt="Un cookie heureux" id="main-cookie" class="main-cookie" onclick="onClick()"> <!-- quand on click on appel la function js "onClick" -->
       <img src="assets/perso2.png" alt="Un bonhomme heureux" class="mobile_hidden perso2">
-      <!-- quand on click on appel la function js "onClick" -->
     </div>
   </section>
 
@@ -148,19 +147,19 @@
       </div>
 
       <div class="tab-content">
-        <div class="logograndma box-image">
+        <div id="logograndma" class="logograndma box-image">
           <img class="grandmasucces" src="assets/succes/succ_grandma.png" alt="cookie succes" />
         </div>
 
-        <div class="cookiesucces box-image">
+        <div id="cookiesucces" class="cookiesucces box-image">
           <img class="cookiesucces" src="assets/succes/succ_cookie.png" alt="cookie succes" />
         </div>
 
-        <div class="musclesucces box-image">
+        <div id="musclesucces" class="musclesucces box-image">
           <img class="musclesucces" src="assets/succes/succ_muscle.png" alt="muscle succes" />
         </div>
 
-        <div class="ovensucces box-image">
+        <div id="ovensucces" class="ovensucces box-image">
           <img class="ovensucces" src="assets/succes/succ_four.png" alt="oven succes" />
           </p>
         </div>

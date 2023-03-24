@@ -26,7 +26,7 @@
 /* HEADER */
 .header {
   background-color: var(--main-color-light-gray);
-  height: 80px;
+  height: 70px;
   top: 0;
   left: 0;
   right: 0;
@@ -359,6 +359,18 @@ h1 {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 400px) {
+  .picturecontent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /*position: absolute;
+    top: 15%;*/
+    margin-top: 5rem;
+  }
+}
+
 .picturecontent {
   display: flex;
   justify-content: space-around;
@@ -366,8 +378,7 @@ h1 {
   width: 100%;
   /*position: absolute;
   top: 15%;*/
-  margin-top: 3%;
-
+  margin-top: 5rem;
 }
 
 .main-cookie {
@@ -551,6 +562,7 @@ footer {
   left: 25%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 7rem;
 }
 
 .tabs {
@@ -580,7 +592,7 @@ footer {
   border-radius: 5rem;
   background-color: var(--dark-color-light-gray);
   margin: 0.7rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
@@ -641,10 +653,8 @@ footer {
   visibility: hidden;
   transition: opacity 0.4s ease-out;
   display: flex;
-  justify-content: space-between;
-  /* padding : 0.5rem; */
+  justify-content: space-around;
   overflow: auto;
-  height: 100px;
   margin-bottom: 0;
 }
 
