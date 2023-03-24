@@ -12,4 +12,4 @@ Fonctionnalités :
 - Ajout et modification de certain succès
 - Ajout d'un système de palié au succès. (gold - Platine - Diamant)
 
-!- la statistique de click a volontairement été réduit pour les tests -!
+> **les statistiques, prix en boutiques et Boots ont volontairement été réduit pour les tests!**
