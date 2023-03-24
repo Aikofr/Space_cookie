@@ -40,7 +40,11 @@ if (typeof(Storage) !== "undefined") {
     if (clicks !== null) {
       // Met à jour le nombre de clics avec la valeur stockée localement
       document.getElementById("clicks").textContent = clicks;
-    } 
+    } else {
+      localStorage.setItem("clicks", 1);
+      console.log("clicks pas trouvé, Départ a 0 !")
+      location.reload();
+    }
 
     //Initialise la donnée perClicks
     if (perClicks !== null) {
