@@ -193,7 +193,7 @@ function secUp(){
     document.getElementById('perSeconds').textContent = perSeconds;
 
     clicks -= perSecondsPrice;
-    perSecondsPrice = perSecondsPrice * 2;
+    perSecondsPrice = perSecondsPrice * 1.2;
     perSecondsPrice = Math.round(perSecondsPrice)
   document.getElementById('perSecondsPrice').textContent = perSecondsPrice;
   document.getElementById("clicks").textContent = clicks;
